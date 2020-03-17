@@ -16,23 +16,29 @@ function changeProgressText() {
 }
 // +1%
 function plusOne() {
-	progressInt += 1;
-	$("#pb").width(progressToText());
-	changeProgressText();
-
+	if (progressInt < 100) {
+		progressInt++;
+		$("#pb").width(progressToText());
+		changeProgressText();
+	}else{
+	alert("Progress-bar is full!")}
 }
 //+3%
 function plusThree() {
-	progressInt += 3;
-	$("#pb").width(progressToText());
-	changeProgressText();
+	if ((progressInt+3) <= 100) {progressInt += 3;
+		$("#pb").width(progressToText());
+		changeProgressText();
+	}else{
+		alert("Progress-bar is full!")}
 
 }
 //+7%
 function plusSeven() {
-	progressInt += 7;
-	$("#pb").width(progressToText());
-	changeProgressText();
+	if ((progressInt+7) <= 100) {progressInt += 7;
+		$("#pb").width(progressToText());
+		changeProgressText();
+	}else{
+		alert("Progress-bar is full!")}
 
 }
 //сбрасываем значение прогрессбара
